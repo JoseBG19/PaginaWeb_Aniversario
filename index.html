@@ -456,115 +456,90 @@
       </div>
     </section>
     <!-- Team-->
-    <section class="page-section bg-light" id="team">
+    <section
+      class="page-section bg-light"
+      id="team"
+      style="
+        background-image: url('https://rare-gallery.com/mocahbig/61055-Scarlet-Witch-Vision-Marvel-Comics-Marvel-ComicsScarlet.jpg');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.85;
+      "
+    >
       <div class="container">
         <div class="text-center">
-          <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-          <h3 class="section-subheading text-muted">
-            Lorem ipsum dolor sit amet consectetur.
+          <h2
+            class="section-heading text-uppercase"
+            style="text-shadow: 5px 3px 4px rgb(255, 255, 255); color: #000000"
+          >
+            Un solo equipo
+          </h2>
+          <h3
+            class="section-subheading text-muted"
+            style="
+              color: #000000 !important;
+              font-size: 18px;
+              text-shadow: 5px 3px 4px rgb(255, 255, 255);
+              color: white;
+            "
+          >
+            Tú y yo, sin nadie más de estorbo xd
           </h3>
         </div>
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="team-member">
-              <img
-                class="mx-auto rounded-circle"
-                src="assets/img/team/1.jpg"
-                alt="..."
-              />
-              <h4>Parveen Anand</h4>
-              <p class="text-muted">Lead Designer</p>
-              <a
-                class="btn btn-dark btn-social mx-2"
-                href="#!"
-                aria-label="Parveen Anand Twitter Profile"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a
-                class="btn btn-dark btn-social mx-2"
-                href="#!"
-                aria-label="Parveen Anand Facebook Profile"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a
-                class="btn btn-dark btn-social mx-2"
-                href="#!"
-                aria-label="Parveen Anand LinkedIn Profile"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="team-member">
-              <img
-                class="mx-auto rounded-circle"
-                src="assets/img/team/2.jpg"
-                alt="..."
-              />
-              <h4>Diana Petersen</h4>
-              <p class="text-muted">Lead Marketer</p>
-              <a
-                class="btn btn-dark btn-social mx-2"
-                href="#!"
-                aria-label="Diana Petersen Twitter Profile"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a
-                class="btn btn-dark btn-social mx-2"
-                href="#!"
-                aria-label="Diana Petersen Facebook Profile"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a
-                class="btn btn-dark btn-social mx-2"
-                href="#!"
-                aria-label="Diana Petersen LinkedIn Profile"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="team-member">
-              <img
-                class="mx-auto rounded-circle"
-                src="assets/img/team/3.jpg"
-                alt="..."
-              />
-              <h4>Larry Parker</h4>
-              <p class="text-muted">Lead Developer</p>
-              <a
-                class="btn btn-dark btn-social mx-2"
-                href="#!"
-                aria-label="Larry Parker Twitter Profile"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a
-                class="btn btn-dark btn-social mx-2"
-                href="#!"
-                aria-label="Larry Parker Facebook Profile"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a
-                class="btn btn-dark btn-social mx-2"
-                href="#!"
-                aria-label="Larry Parker LinkedIn Profile"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div class="row">
+        <style>
+          .translucent-bg {
+            background-color: rgba(12, 198, 223, 0.5);
+            padding: 40px;
+            border-radius: 20px;
+          }
+        </style>
+
+        <div class="row translucent-bg">
           <div class="col-lg-8 mx-auto text-center">
-            <p class="large text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut
-              eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam
-              corporis ea, alias ut unde.
+            <p class="large text-muted" style="color: #000000 !important">
+              <b>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut
+                eaque, laboriosam veritatis, quos non quis ad perspiciatis,
+                totam corporis ea, alias ut unde.
+                <br />
+                <br />
+                ¿Aceptas el reto?
+              </b>
             </p>
+
+            <button id="yes">Sí</button>
+            <button id="no">No</button>
+
+            <script>
+              const vutonSi = document.getElementById("yes");
+              const vutonNo = document.getElementById("no");
+
+              const aceptado = () => {
+                alert("Vamos con todo mis valientes ❤️");
+              };
+
+              const noBtn = document.querySelector("#no");
+
+              noBtn.addEventListener("mouseover", function () {
+                const randomX = parseInt(Math.random() * 500);
+                const randomY = parseInt(Math.random() * 500);
+                noBtn.style.setProperty("top", randomY + "%");
+                noBtn.style.setProperty("left", randomX + "%");
+                noBtn.style.setProperty(
+                  "transform",
+                  `translate(-${randomX}%,-${randomY}%)`
+                );
+              });
+
+              vutonSi.addEventListener("click", aceptado);
+              vutonNo.addEventListener("click", EvitarSerRechazado);
+            </script>
           </div>
         </div>
       </div>
     </section>
-    <!-- Clients-->
+
+    <!-- WANDAVISION-->
     <div
       class="py-5"
       style="background: linear-gradient(to bottom, #930000, #c14848)"
