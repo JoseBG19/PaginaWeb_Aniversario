@@ -664,6 +664,92 @@
         </div>
       </div>
     </section>
+    
+    <section
+      class="page-section bg-light"
+      id="barbie"
+      style="
+        background-image: url('assets/img/barbie.jpg');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.85;
+        height: 100vh; /* Ajusta la altura del section al 100% del viewport */
+      "
+    >
+    
+    <audio id="myAudio" loop>
+      <source src="assets/musica_barbie.mp3" type="audio/mpeg">
+      <!-- También puedes proporcionar otras fuentes de audio, como ogg, para una mayor compatibilidad -->
+    </audio>
+    
+      <div class="container">
+        <div class="text-center">
+          <h2
+            class="section-heading text-uppercase"
+            style="text-shadow: 5px 3px 4px rgb(255, 0, 179); color: #ff81ff"
+          >
+            ¿Quieres ir a ver Barbie conmigo?
+          </h2>
+        </div>
+        <style>
+          .translucent-bg {
+            background-color: rgba(12, 198, 223, 0.5);
+            padding: 40px;
+            border-radius: 20px;
+            display: inline-block;
+          }
+        </style>
+
+      </div>
+      <div class="button-container">
+        <a href="assets/Vamos_a_ver_Barbie.pdf" class="btn-yes" download>Obviamente que sí mi amor</a>
+      </div>
+      <div class="button-container">
+        <button class="btn-yes" onclick="redirectToWhatsApp()">Confirmar mi asistencia</button>
+      </div>
+      
+      <style>
+        .button-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 20px;
+        }
+      
+        /* Estilos para simular un botón */
+        .btn-yes {
+          display: inline-block;
+          padding: 10px 20px;
+          font-size: 16px;
+          text-decoration: none;
+          background-color: #ff19ec;
+          color: white;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      
+        /* Estilo al pasar el ratón sobre el botón */
+        .btn-yes:hover {
+          background-color: #ff0479;
+          color: rgb(255, 251, 0);
+        }
+      
+        /* Estilo al hacer clic en el botón */
+        .btn-yes:active {
+          background-color: #ff0479;
+        }
+      </style>
+
+      <br>
+      <br>
+      <center>
+        <div class="video-background">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/zh4KhVSMwtQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </center>
+    </section>
+
+    
 
     <!-- Footer-->
     <footer class="footer py-4">
@@ -975,5 +1061,49 @@
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var audio = document.getElementById("myAudio");
+    
+        function playAudio() {
+          audio.play().catch(function() {
+            // Si la reproducción automática está bloqueada o no se pudo reproducir,
+            // requerimos la interacción del usuario para activar el audio
+            requestAudioPermission();
+          });
+        }
+    
+        function requestAudioPermission() {
+          // Muestra una notificación para pedir permiso al usuario para reproducir el audio
+          if (window.Notification && Notification.permission !== "granted") {
+            Notification.requestPermission().then(function(permission) {
+              if (permission === "granted") {
+                playAudio();
+              }
+            });
+          }
+        }
+    
+        playAudio(); // Intenta reproducir el audio al cargar la página
+      });
+    </script>
+
+<script>
+  function redirectToWhatsApp() {
+    // Número de teléfono del contacto (sin el signo +)
+    const phoneNumber = "961849512";
+
+    // Mensaje de confirmación predefinido
+    const message = "Si quiero ir contigo a ver Barbie, mi amorcito hermoso ♥";
+
+    // Generar el enlace de WhatsApp
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    // Redirigir al enlace de WhatsApp
+    window.location.href = whatsappLink;
+  }
+</script>
+    
   </body>
 </html>
